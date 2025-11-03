@@ -3,99 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Український постпанк-гурт ДК Енергетик.">
   <title>ДК Енергетик</title>
+  <meta name="description" content="Український постпанк-гурт ДК Енергетик.">
+
+  <!-- CSS-змінні та стилі -->
   <style>
+    :root {
+      --main-color: #ff6347;
+      --secondary-color: #00ffff;
+      --text-color: #ffffff;
+      --font-size: 16px;
+      --spacing: 20px;
+    }
+
     body {
       font-family: Arial, sans-serif;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkyq9VVCjVRdfO5XZiz9GLp1eTRaedKExiJgKbK9xltA&s=10');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: var(--text-color);
+      font-size: var(--font-size);
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
-      background: url('https://images.unsplash.com/photo-1533237412157-2455ee4c5f52?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
     }
-    header {
-      background-color: rgba(0,0,0,0.8);
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin-top: 10px;
-    }
-    nav ul li {
-      display: inline;
-      margin-right: 20px;
-    }
-    nav ul li a {
-      color: #ff6347;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    main {
-      padding: 20px;
-      background-color: rgba(0,0,0,0.6);
-    }
-    h2 {
-      color: #ff6347;
-    }
-    ul, ol {
-      margin-left: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      background-color: rgba(255,255,255,0.1);
-    }
-    table, th, td {
-      border: 1px solid #fff;
-    }
-    th, td {
-      padding: 10px;
-      text-align: left;
-    }
-    footer {
-      background-color: rgba(0,0,0,0.8);
-      text-align: center;
-      padding: 10px;
-    }
-    a.song-link {
-      color: #00ffff;
-    }
-    blockquote {
-      border-left: 5px solid #ff6347;
-      padding-left: 10px;
-      margin: 20px 0;
-      font-style: italic;
-    }
-    hr {
-      border: 1px solid #ff6347;
-    }
-    img {
-      margin: 10px;
-      border: 2px solid #ff6347;
-    }
-    iframe {
-      margin: 10px 0;
-      display: block;
-      width: 100%;
-      max-width: 560px;
-      height: 315px;
-    }
+
+    h1 { color: var(--main-color); text-align: center; font-size: 2.5rem; margin-bottom: var(--spacing);}
+    h2 { color: var(--secondary-color); margin-bottom: 10px;}
+    section > h2 { text-transform: uppercase; border-bottom: 2px solid var(--main-color); padding-bottom: 5px; }
+    h3 { color: var(--main-color); font-size: 1.2rem; }
+
+    p { margin-bottom: var(--spacing); }
+    strong { color: var(--secondary-color); }
+    em { font-style: italic; color: #f0e68c; }
+    mark { background-color: #333; padding: 2px 4px; color: #fff; }
+
+    header nav ul { list-style: none; padding: 0; text-align: center; }
+    header nav ul li { display: inline-block; margin: 0 15px; }
+    header nav ul li a { color: var(--secondary-color); font-weight: bold; text-decoration: none; transition: 0.3s; }
+    header nav ul li a:hover { color: var(--main-color); text-decoration: underline; }
+
+    section { background-color: rgba(0,0,0,0.65); margin: var(--spacing); padding: var(--spacing); border-radius: 10px; box-shadow: 0 0 10px #000; }
+    .card { border: 1px solid var(--secondary-color); border-radius: 10px; }
+
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #fff; padding: 8px; text-align: center; }
+    th { background-color: var(--main-color); }
+    .even { background-color: rgba(255,255,255,0.15); }
+
+    img { border: 3px solid var(--main-color); border-radius: 10px; margin: 10px; transition: transform 0.3s; }
+    img:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--secondary-color); }
+
+    iframe { margin: 10px 0; display: block; width: 100%; max-width: 560px; height: 315px; }
+
+    a:hover { color: #ff1493; }
+    input:focus { border-color: var(--main-color); outline: none; }
+    button:hover { background-color: var(--secondary-color); }
+
+    #footer { text-align: center; background-color: rgba(0,0,0,0.75); padding: 15px; border-top: 2px solid var(--main-color); }
+    .header { background-color: rgba(0,0,0,0.8); padding: var(--spacing); }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>ДК Енергетик</h1>
+  <header class="header">
+    <h1 id="main-title">ДК Енергетик</h1>
     <nav>
       <ul>
         <li><a href="#about">Про гурт</a></li>
@@ -111,64 +84,54 @@
 
   <main>
     <!-- Про гурт -->
-    <section id="about">
+    <section id="about" class="card">
       <h2>Про гурт</h2>
-      <p><strong>ДК Енергетик</strong> &mdash; український постпанк-гурт, заснований у 2022 році. Назва гурту походить від Палацу культури &laquo;Енергетик&raquo; у Прип'яті.</p>
-      <p>Музика гурту поєднує атмосферу 90-х пострадянської України з сучасними рефлексіями. Вони активно виступають на українській сцені та брали участь у Нацвідборі на Євробачення 2025 з піснею "Сіль".</p>
+      <p><strong>ДК Енергетик</strong> — український постпанк-гурт, заснований у 2022 році.</p>
+      <p><em>Музика гурту</em> поєднує атмосферу 90-х з сучасними рефлексіями.</p>
+      <p>Назва походить від Палацу культури <mark>Енергетик</mark> у Прип’яті.</p>
       <blockquote>«Музика має надихати і об’єднувати людей» — ДК Енергетик</blockquote>
     </section>
 
-    <hr>
-
     <!-- Альбоми -->
-    <section id="albums">
+    <section id="albums" class="card">
       <h2>Альбоми</h2>
       <ol>
         <li><strong>Юність</strong> (2023)</li>
         <li><strong>Шлях</strong> (2023)</li>
         <li><strong>Завтра</strong> (2024)</li>
-        <li><strong>Квадрати</strong> (2025) — останній альбом гурту, який розглядає сучасні виклики та креативні ідеї</li>
+        <li><strong>Квадрати</strong> (2025)</li>
       </ol>
     </section>
 
-    <hr>
-
-    <!-- Аудіо -->
-    <section id="audio">
+    <!-- Музика -->
+    <section id="audio" class="card">
       <h2>Музика онлайн</h2>
-      <p>Слухайте пісні гурту прямо на сайті:</p>
       <ul>
         <li><a class="song-link" href="https://ua-zvuk.net/4731-dk-energetik-epilog/" target="_blank">Епілог</a>
           <audio controls>
             <source src="https://ua-zvuk.net/music/4731-dk-energetik-epilog.mp3" type="audio/mpeg">
-            Ваш браузер не підтримує аудіо.
           </audio>
         </li>
         <li><a class="song-link" href="https://ua-zvuk.net/4739-dk-energetik-gambit/" target="_blank">Гамбіт</a>
           <audio controls>
             <source src="https://ua-zvuk.net/music/4739-dk-energetik-gambit.mp3" type="audio/mpeg">
-            Ваш браузер не підтримує аудіо.
           </audio>
         </li>
         <li><a class="song-link" href="https://ua-zvuk.net/4740-dk-energetik-sonce/" target="_blank">Сонце</a>
           <audio controls>
             <source src="https://ua-zvuk.net/music/4740-dk-energetik-sonce.mp3" type="audio/mpeg">
-            Ваш браузер не підтримує аудіо.
           </audio>
         </li>
         <li><a class="song-link" href="https://ua-zvuk.net/4734-dk-energetik-poet/" target="_blank">Поет</a>
           <audio controls>
             <source src="https://ua-zvuk.net/music/4734-dk-energetik-poet.mp3" type="audio/mpeg">
-            Ваш браузер не підтримує аудіо.
           </audio>
         </li>
       </ul>
     </section>
 
-    <hr>
-
     <!-- Відео -->
-    <section id="videos">
+    <section id="videos" class="card">
       <h2>Відео кліпи</h2>
       <iframe src="https://www.youtube.com/embed/KpuSuE3O6gI" title="Енергетик" allowfullscreen></iframe>
       <iframe src="https://www.youtube.com/embed/CXnbc3j88_A" title="Шлях" allowfullscreen></iframe>
@@ -176,49 +139,40 @@
       <iframe src="https://www.youtube.com/embed/tgVAWTM3KHE" title="Квадрати" allowfullscreen></iframe>
     </section>
 
-    <hr>
-
     <!-- Галерея -->
-    <section id="gallery">
+    <section id="gallery" class="card">
       <h2>Галерея</h2>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgQ5BgnLY4eC9y1hkjuJWQjBoX2lkokokoozFf0ZpnUg&s=10" alt="Гурт ДК Енергетик" width="400" height="300">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNlW_B9aSnqZgd87QsibRkswK1lgssPdgBZRSh-JxI6A&s=10" alt="Концерт гурту" width="400" height="300">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSgg_TFdneraflTMEkMtL4vDHx29dL8aQf-lsvXkB8Iw&s=10" alt="Обкладинка альбому" width="400" height="300">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgQ5BgnLY4eC9y1hkjuJWQjBoX2lkokokoozFf0ZpnUg&s=10" alt="Гурт ДК Енергетик" width="300">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNlW_B9aSnqZgd87QsibRkswK1lgssPdgBZRSh-JxI6A&s=10" alt="Концерт гурту" width="300">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSgg_TFdneraflTMEkMtL4vDHx29dL8aQf-lsvXkB8Iw&s=10" alt="Обкладинка альбому" width="300">
     </section>
 
-    <hr>
-
     <!-- Статистика -->
-    <section id="stats">
+    <section id="stats" class="card">
       <h2>Статистика виступів</h2>
       <table>
         <thead>
-          <tr>
-            <th>Місяць</th>
-            <th>Кількість концертів</th>
-            <th>Відвідуваність</th>
-          </tr>
+          <tr><th>Місяць</th><th>Кількість концертів</th><th>Відвідуваність</th></tr>
         </thead>
         <tbody>
-          <tr><td>Січень</td><td>3</td><td>450 осіб</td></tr>
+          <tr class="even"><td>Січень</td><td>3</td><td>450 осіб</td></tr>
           <tr><td>Лютий</td><td>4</td><td>600 осіб</td></tr>
-          <tr><td>Березень</td><td>2</td><td>300 осіб</td></tr>
+          <tr class="even"><td>Березень</td><td>2</td><td>300 осіб</td></tr>
         </tbody>
       </table>
     </section>
 
-    <hr>
-
-    <!-- Карта -->
-    <section id="contact">
+    <!-- Контакти -->
+    <section id="contact" class="card">
       <h2>Місцезнаходження гурту</h2>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.733468111516!2d30.5234!3d50.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf2f0b43f1b1%3A0x2b14aa1f0a2b02b5!2z0LLRg9C70LjRhtGPINC_0LXRgNC-0YHRgtC40Y8!5e0!3m2!1suk!2sua!4v1698092881642!5m2!1suk!2sua"
         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <p>Email: dk.energetic@gmail.com</p>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Кушвид Олег &reg; &euro; &mdash; всі права захищені</p>
+  <footer id="footer">
+    <p>&copy; 2025 Кушвид Олег — всі права захищені</p>
   </footer>
 </body>
-</html> 
+</html>
